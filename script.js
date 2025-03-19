@@ -64,4 +64,21 @@ document.addEventListener("DOMContentLoaded", function () {
     menuToggle.addEventListener("click", () => {
         navLinks.classList.toggle("active");
     });
+
+    // Ajouter un menu mobile hamburger
+    const mobileMenuButton = document.getElementById("mobile-menu");
+    if (mobileMenuButton) {
+        mobileMenuButton.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    }
+
+    // Fermeture du menu lorsque l'utilisateur clique sur un lien
+    document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+            if (navLinks.classList.contains("active")) {
+                navLinks.classList.remove("active");
+            }
+        });
+    });
 });
